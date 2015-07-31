@@ -20,9 +20,3 @@ Package.onUse(function(api) {
     "launch-screen"
   ], "web.cordova");
 });
-
-Package.onTest(function(api) {
-  api.use('tinytest');
-  api.use('mobile-experience');
-  api.addFiles('mobile-experience-tests.js');
-});
