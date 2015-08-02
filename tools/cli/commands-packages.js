@@ -1660,14 +1660,20 @@ main.registerCommand({
     projectContext.packageMap.eachPackage(function (name, info) {
       var selectedVersion = info.version;
       var catalog = projectContext.projectCatalog;
-      var latestVersion = catalog.getLatestMainlineVersion(name).version;
-      if (selectedVersion !== latestVersion) {
-        var rec = { name: name, selectedVersion: selectedVersion,
-                    latestVersion: latestVersion };
-        if (_.has(topLevelPkgSet, name)) {
-          nonlatestDirectDeps.push(rec);
-        } else {
-          nonlatestIndirectDeps.push(rec);
+      var latestInfo = catalog.getLatestMainlineVersion(name);
+      Console.debug(`Package ${name}-${selectedVersion}, latest info ${latestInfo}`);
+      if (latestInfo) {
+        var latestVersion = catalog.getLatestMainlineVersion(name).version;
+        if (selectedVersion !== latestVersion) {
+          var rec = {
+            name: name, selectedVersion: selectedVersion,
+            latestVersion: latestVersion
+          };
+          if (_.has(topLevelPkgSet, name)) {
+            nonlatestDirectDeps.push(rec);
+          } else {
+            nonlatestIndirectDeps.push(rec);
+          }
         }
       }
     });
