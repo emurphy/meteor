@@ -50,7 +50,7 @@ var ISOPACKETS = {
   'ejson': ['ejson'],
   'minifiers': ['minifiers'],
   'constraint-solver': ['constraint-solver'],
-  'cordova-support': ['boilerplate-generator', 'logging', 'webapp-hashing',
+  'cordova-support': ['cordova', 'boilerplate-generator', 'logging', 'webapp-hashing',
                       'xmlbuilder'],
   'logging': ['logging']
 };

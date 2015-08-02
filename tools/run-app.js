@@ -9,7 +9,7 @@ var release = require('./release.js');
 var buildmessage = require('./buildmessage.js');
 var runLog = require('./run-log.js');
 var stats = require('./stats.js');
-import { getCordovaDependenciesFromStar } from '../cordova/build.js';
+import { getCordovaDependenciesFromStar } from './cordova/build.js';
 var Console = require('./console.js').Console;
 var catalog = require('./catalog/catalog.js');
 var Profile = require('./profile.js').Profile;
